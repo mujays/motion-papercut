@@ -1,0 +1,540 @@
+{
+ "lang": "id",
+ "background": "night",
+ "format": {
+  "aspect": "9:16",
+  "quality": 720,
+  "fps": 30,
+  "music": "auto",
+  "music_mood": "playful"
+ },
+ "design_aspect": "9:16",
+ "meta": {
+  "title": [
+   "Bagaimana AI",
+   "belajar?"
+  ],
+  "outro": [
+   "Banyak contoh",
+   "tebakan makin jitu"
+  ],
+  "cta": "FOLLOW UNTUK LAINNYA"
+ },
+ "camera": {
+  "x": 360,
+  "y": 640,
+  "zoom": 1.0
+ },
+ "world": [
+  {
+   "id": "moon",
+   "type": "prop",
+   "prop": "moon",
+   "x": 600,
+   "y": 200,
+   "w": 90,
+   "parallax": 0.3
+  },
+  {
+   "id": "land",
+   "type": "landscape",
+   "y": 900,
+   "x0": -700,
+   "x1": 2300
+  },
+  {
+   "id": "belt",
+   "type": "conveyor",
+   "x": -40,
+   "y": 905,
+   "w": 520,
+   "hidden": true,
+   "enter": "slide-right"
+  },
+  {
+   "id": "brain",
+   "type": "prop",
+   "prop": "brain",
+   "x": 520,
+   "y": 700,
+   "w": 250,
+   "hidden": true,
+   "bob": 4
+  },
+  {
+   "id": "knobs",
+   "type": "dials",
+   "x": 520,
+   "y": 930,
+   "n": 3,
+   "r": 22,
+   "hidden": true
+  },
+  {
+   "id": "count",
+   "type": "counter",
+   "x": 40,
+   "y": 330,
+   "value": 0,
+   "size": 58,
+   "suffix": "contoh",
+   "hidden": true
+  },
+  {
+   "id": "flowarrow",
+   "type": "arrow",
+   "x": 30,
+   "y": 470,
+   "to": [
+    380,
+    470
+   ],
+   "bend": 0.04,
+   "draw": 0,
+   "hidden": true
+  },
+  {
+   "id": "cat",
+   "type": "photo",
+   "x": 130,
+   "y": 600,
+   "w": 120,
+   "icon": "cat",
+   "bg": "lightblue",
+   "tag": "kucing",
+   "hidden": true,
+   "rotate": -3
+  },
+  {
+   "id": "a1",
+   "type": "arrow",
+   "x": 205,
+   "y": 600,
+   "to": [
+    370,
+    620
+   ],
+   "bend": 0.12,
+   "width": 11,
+   "draw": 0,
+   "hidden": true
+  },
+  {
+   "id": "guess",
+   "type": "bubble",
+   "text": "anjing?",
+   "x": 560,
+   "y": 430,
+   "size": 34,
+   "tail": "left",
+   "hidden": true
+  },
+  {
+   "id": "ring",
+   "type": "ring",
+   "x": 560,
+   "y": 430,
+   "rx": 120,
+   "ry": 70,
+   "width": 9,
+   "draw": 0,
+   "hidden": true
+  },
+  {
+   "id": "x",
+   "type": "mark",
+   "kind": "cross",
+   "x": 655,
+   "y": 385,
+   "size": 62,
+   "hidden": true
+  },
+  {
+   "id": "fix",
+   "type": "arrow",
+   "x": 650,
+   "y": 495,
+   "to": [
+    610,
+    895
+   ],
+   "bend": 0.35,
+   "color": "red",
+   "width": 9,
+   "draw": 0,
+   "hidden": true
+  },
+  {
+   "id": "guess2",
+   "type": "bubble",
+   "text": "kucing",
+   "x": 560,
+   "y": 430,
+   "size": 34,
+   "tail": "left",
+   "hidden": true
+  },
+  {
+   "id": "ok",
+   "type": "mark",
+   "kind": "check",
+   "x": 660,
+   "y": 395,
+   "size": 66,
+   "hidden": true
+  },
+  {
+   "id": "acc",
+   "type": "text",
+   "text": "Akurasi",
+   "x": 1180,
+   "y": 400,
+   "size": 52,
+   "colors": "teal",
+   "hidden": true
+  },
+  {
+   "id": "badge",
+   "type": "burst",
+   "x": 1440,
+   "y": 400,
+   "r": 92,
+   "hidden": true,
+   "spin": 5
+  },
+  {
+   "id": "pct",
+   "type": "counter",
+   "x": 1440,
+   "y": 400,
+   "value": 61,
+   "size": 58,
+   "color": "coral",
+   "suffix": "%",
+   "suffix_color": "coral",
+   "suffix_size": 50,
+   "align": "center",
+   "hidden": true
+  },
+  {
+   "id": "chart",
+   "type": "bars",
+   "x": 1080,
+   "y": 900,
+   "w": 440,
+   "h": 370,
+   "values": [
+    0.46,
+    0.55,
+    0.64,
+    0.7,
+    0.76,
+    0.8,
+    0.84,
+    0.88
+   ],
+   "label": "putaran latihan",
+   "grow": 0,
+   "hidden": true
+  }
+ ],
+ "beats": [
+  {
+   "at": 2.9,
+   "do": [
+    {
+     "type": "show",
+     "id": "belt",
+     "enter": "slide-right"
+    },
+    {
+     "type": "show",
+     "id": "brain",
+     "delay": 0.25
+    }
+   ]
+  },
+  {
+   "at": 3.5,
+   "do": [
+    {
+     "type": "show",
+     "id": "knobs"
+    },
+    {
+     "type": "label",
+     "label": "model",
+     "target": "brain",
+     "offset": [
+      -110,
+      110
+     ],
+     "hold": 3.8
+    }
+   ]
+  },
+  {
+   "at": 4.0,
+   "do": [
+    {
+     "type": "show",
+     "id": "count"
+    },
+    {
+     "type": "draw",
+     "id": "flowarrow",
+     "dur": 0.8
+    }
+   ]
+  },
+  {
+   "at": 4.3,
+   "do": [
+    {
+     "type": "count",
+     "id": "count",
+     "to": 1000000,
+     "dur": 3.4
+    },
+    {
+     "type": "flow",
+     "items": [
+      {
+       "type": "photo",
+       "w": 92,
+       "icon": "cat",
+       "bg": "lightblue",
+       "tag": "kucing"
+      },
+      {
+       "type": "photo",
+       "w": 92,
+       "icon": "dog",
+       "bg": "yellow",
+       "tag": "anjing"
+      },
+      {
+       "type": "photo",
+       "w": 92,
+       "icon": "dog",
+       "bg": "lightblue",
+       "tag": "anjing"
+      },
+      {
+       "type": "photo",
+       "w": 92,
+       "icon": "cat",
+       "bg": "yellow",
+       "tag": "kucing"
+      }
+     ],
+     "from": [
+      -80,
+      830
+     ],
+     "to": [
+      450,
+      830
+     ],
+     "every": 0.42,
+     "count": 8,
+     "dur": 2.0
+    }
+   ]
+  },
+  {
+   "at": 8.0,
+   "do": [
+    {
+     "type": "hide",
+     "id": [
+      "count",
+      "flowarrow"
+     ]
+    },
+    {
+     "type": "camera",
+     "focus": [
+      400,
+      640
+     ],
+     "zoom": 1.08,
+     "dur": 1.0
+    },
+    {
+     "type": "show",
+     "id": "cat"
+    }
+   ]
+  },
+  {
+   "at": 8.6,
+   "do": [
+    {
+     "type": "draw",
+     "id": "a1",
+     "dur": 0.5
+    },
+    {
+     "type": "pulse",
+     "target": "brain",
+     "delay": 0.4
+    }
+   ]
+  },
+  {
+   "at": 9.3,
+   "do": [
+    {
+     "type": "show",
+     "id": "guess"
+    },
+    {
+     "type": "label",
+     "label": "Tebak",
+     "target": [
+      470,
+      360
+     ],
+     "offset": [
+      0,
+      0
+     ],
+     "hold": 2.2
+    }
+   ]
+  },
+  {
+   "at": 10.0,
+   "do": [
+    {
+     "type": "draw",
+     "id": "ring",
+     "dur": 0.45
+    },
+    {
+     "type": "show",
+     "id": "x",
+     "delay": 0.35
+    }
+   ]
+  },
+  {
+   "at": 10.7,
+   "do": [
+    {
+     "type": "draw",
+     "id": "fix",
+     "dur": 0.6
+    },
+    {
+     "type": "label",
+     "label": "Perbaiki",
+     "target": [
+      660,
+      760
+     ],
+     "offset": [
+      0,
+      0
+     ],
+     "hold": 1.8
+    },
+    {
+     "type": "set",
+     "id": "knobs",
+     "props": {
+      "angle": 70
+     },
+     "dur": 0.6,
+     "delay": 0.5,
+     "sfx": "snip"
+    }
+   ]
+  },
+  {
+   "at": 12.2,
+   "do": [
+    {
+     "type": "hide",
+     "id": [
+      "guess",
+      "ring",
+      "x",
+      "fix"
+     ]
+    },
+    {
+     "type": "show",
+     "id": "guess2",
+     "delay": 0.2
+    },
+    {
+     "type": "show",
+     "id": "ok",
+     "delay": 0.6
+    }
+   ]
+  },
+  {
+   "at": 13.9,
+   "do": [
+    {
+     "type": "camera",
+     "focus": [
+      1300,
+      640
+     ],
+     "zoom": 1.0,
+     "dur": 1.4
+    },
+    {
+     "type": "show",
+     "id": "chart",
+     "delay": 0.6
+    }
+   ]
+  },
+  {
+   "at": 14.8,
+   "do": [
+    {
+     "type": "show",
+     "id": "acc"
+    },
+    {
+     "type": "show",
+     "id": "pct",
+     "delay": 0.2
+    },
+    {
+     "type": "grow",
+     "id": "chart",
+     "dur": 3.0
+    },
+    {
+     "type": "count",
+     "id": "pct",
+     "to": 97,
+     "dur": 3.0,
+     "ease": "linear"
+    }
+   ]
+  },
+  {
+   "at": 17.9,
+   "do": [
+    {
+     "type": "show",
+     "id": "badge"
+    },
+    {
+     "type": "pulse",
+     "target": "pct",
+     "scale": 0.25
+    }
+   ]
+  }
+ ],
+ "duration": 23.0
+}

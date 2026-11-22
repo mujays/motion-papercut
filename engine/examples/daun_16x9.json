@@ -1,0 +1,234 @@
+{
+ "lang": "id",
+ "background": "dusk",
+ "format": {
+  "aspect": "16:9",
+  "quality": 720,
+  "captions": {
+   "show": true,
+   "words": 3
+  },
+  "music_mood": "calm"
+ },
+ "design_aspect": "16:9",
+ "meta": {
+  "title": [
+   "Kenapa daun",
+   "berubah warna?"
+  ],
+  "outro": [
+   "Klorofil hilang",
+   "warna asli muncul"
+  ]
+ },
+ "script": "Kenapa daun bisa berubah warna? Daun terlihat hijau karena klorofil, zat yang menangkap cahaya matahari. Saat siang makin pendek, pohon berhenti membuat klorofil. Hijaunya memudar, dan warna kuning serta oranye yang selama ini tersembunyi akhirnya terlihat.",
+ "highlight": [
+  "hijau",
+  "klorofil",
+  "matahari",
+  "pendek",
+  "berhenti",
+  "memudar",
+  "kuning",
+  "oranye",
+  "tersembunyi"
+ ],
+ "camera": {
+  "x": 360,
+  "y": 640,
+  "zoom": 1.0
+ },
+ "world": [
+  {
+   "id": "sun",
+   "type": "prop",
+   "prop": "sun",
+   "x": 880,
+   "y": 400,
+   "w": 130,
+   "parallax": 0.4,
+   "wobble": 3
+  },
+  {
+   "id": "land",
+   "type": "landscape",
+   "y": 830,
+   "x0": -900,
+   "x1": 1700
+  },
+  {
+   "id": "tree",
+   "type": "prop",
+   "prop": "tree",
+   "x": 60,
+   "y": 640,
+   "w": 300,
+   "hidden": true,
+   "enter": "grow"
+  },
+  {
+   "id": "leafG",
+   "type": "prop",
+   "prop": "leaf",
+   "x": 420,
+   "y": 560,
+   "w": 170,
+   "hidden": true,
+   "rotate": -10
+  },
+  {
+   "id": "leafO",
+   "type": "prop",
+   "prop": "leaf",
+   "x": 420,
+   "y": 560,
+   "w": 170,
+   "hidden": true,
+   "rotate": -10,
+   "recolor": {
+    "#5eaa6a": "orange",
+    "#3f8a50": "coral"
+   }
+  },
+  {
+   "id": "clock",
+   "type": "counter",
+   "x": 700,
+   "y": 560,
+   "value": 14,
+   "size": 64,
+   "suffix": "jam siang",
+   "align": "center",
+   "hidden": true
+  },
+  {
+   "id": "beam",
+   "type": "arrow",
+   "x": 820,
+   "y": 430,
+   "to": [
+    500,
+    520
+   ],
+   "bend": -0.1,
+   "draw": 0,
+   "hidden": true
+  }
+ ],
+ "beats": [
+  {
+   "at": "Daun terlihat hijau",
+   "do": [
+    {
+     "type": "show",
+     "id": "tree",
+     "enter": "grow"
+    },
+    {
+     "type": "camera",
+     "focus": [
+      380,
+      600
+     ],
+     "zoom": 1.15,
+     "dur": 1.2
+    },
+    {
+     "type": "show",
+     "id": "leafG"
+    }
+   ]
+  },
+  {
+   "at": "klorofil",
+   "do": {
+    "type": "label",
+    "label": "klorofil",
+    "target": "leafG",
+    "offset": [
+     120,
+     -70
+    ],
+    "hold": 2.6
+   }
+  },
+  {
+   "at": "menangkap cahaya",
+   "do": {
+    "type": "draw",
+    "id": "beam",
+    "dur": 0.7
+   }
+  },
+  {
+   "at": "Saat siang",
+   "do": [
+    {
+     "type": "hide",
+     "id": "beam"
+    },
+    {
+     "type": "show",
+     "id": "clock"
+    },
+    {
+     "type": "count",
+     "id": "clock",
+     "to": 10,
+     "dur": 1.6
+    }
+   ]
+  },
+  {
+   "at": "berhenti membuat",
+   "do": [
+    {
+     "type": "pulse",
+     "target": "tree"
+    },
+    {
+     "type": "hide",
+     "id": "clock",
+     "delay": 0.8
+    }
+   ]
+  },
+  {
+   "at": "Hijaunya memudar",
+   "do": {
+    "type": "swap",
+    "swap": [
+     "leafG",
+     "leafO"
+    ]
+   }
+  },
+  {
+   "at": "kuning serta oranye",
+   "do": [
+    {
+     "type": "bigtext",
+     "bigtext": "kuning + oranye",
+     "pos": [
+      0.62,
+      0.36
+     ],
+     "size": 60,
+     "hold": 2.2
+    }
+   ]
+  },
+  {
+   "at": "akhirnya terlihat",
+   "do": {
+    "type": "camera",
+    "focus": [
+     360,
+     640
+    ],
+    "zoom": 1.0,
+    "dur": 1.2
+   }
+  }
+ ]
+}
